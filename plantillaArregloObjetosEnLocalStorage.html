@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito (LocalStorage)</title>
+  <link rel="stylesheet" href="css/locastorage.css">
+</head>
+<body onload="mostrarArreglo()">
+  <header>
+    <h1>📦 Productos en el Carrito</h1>
+  </header>
+
+  <main>
+    <section class="contenedor">
+      <div id="lista-productos"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Healthy Sandwich</p>
+  </footer>
+
+  <script>
+    function mostrarArreglo() {
+      let datosCarrito = localStorage.getItem("carrito");
+      let contenedor = document.getElementById("lista-productos");
+
+      if (!datosCarrito) {
+        contenedor.innerHTML = "<p>No hay productos en el carrito.</p>";
+        return;
+      }
+
+      let arreglo = JSON.parse(datosCarrito);
+      let html = "<table><tr><th>Producto</th><th>Precio</th><th>Cantidad</th></tr>";
+
+      for (let i = 0; i < arreglo.length; i++) {
+        html += `<tr>
+                  <td>${arreglo[i].nombre}</td>
+                  <td>S/. ${arreglo[i].precio.toFixed(2)}</td>
+                  <td>${arreglo[i].cantidad ?? 1}</td>
+                </tr>`;
+      }
+
+      html += "</table>";
+      contenedor.innerHTML = html;
+    }
+  </script>
+</body>
+</html>

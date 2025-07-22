@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ofertas - Healthy Sandwich</title>
+  <link rel="stylesheet" href="css/ofertas.css">
+</head>
+
+<body>
+  <header>
+    <h1>Ofertas Especiales</h1>
+    <nav class="navbar">
+      <a href="#" class="logo-menu">🥪 Healthy Sandwich</a>
+      <ul id="navLinks">
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catalogo</a></li>
+        <li><a href="equipo.html">Equipo</a></li>
+         <li><a href="carrito.html">🛒 Carrito</a></li>
+         <li><a href="login.html">Registro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="ofertas-container">
+      <h2>¡Aprovecha nuestras promociones del mes!</h2>
+
+      <div class="oferta">
+        <img src="img/pollo.jpg" alt="Sándwich de pollo">
+        <div class="descripcion">
+          <h3>🔥 Combo Pollo + Jugo Natural</h3>
+          <p>Antes: <span class="tachado">S/15.00</span></p>
+          <p>Ahora: <span class="precio">S/11.00</span></p>
+          <button onclick="agregar('Combo Pollo + Jugo', 11.00)">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="oferta">
+        <img src="img/queso.jpg" alt="Sándwich de queso">
+        <div class="descripcion">
+          <h3>2x1 en Sándwich de Queso</h3>
+          <p>¡Llévate dos por el precio de uno!</p>
+          <p><span class="precio">S/11.00</span></p>
+          <button onclick="agregar('2x1 Queso', 11.00)">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="oferta">
+        <img src="img/hamburguesa.jpg" alt="Sándwich de hamburguesa">
+        <div class="descripcion">
+          <h3>Combo Hamburguesa + Refresco</h3>
+          <p>Antes: <span class="tachado">S/17.00</span></p>
+          <p>Ahora: <span class="precio">S/13.00</span></p>
+          <button onclick="agregar('Combo Hamburguesa + Refresco', 13.00)">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="oferta">
+        <img src="img/huevo.jpg" alt="Sándwich de huevo">
+        <div class="descripcion">
+          <h3>Desayuno Energético</h3>
+          <p>Huevo + Pan integral + Café</p>
+          <p><span class="precio">S/10.00</span></p>
+          <button onclick="agregar('Desayuno Energético', 10.00)">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="oferta">
+        <img src="img/jamón.jpg" alt="Sándwich de jamón">
+        <div class="descripcion">
+          <h3>🔥 Jamón + Queso Combo</h3>
+          <p>Antes: <span class="tachado">S/14.00</span></p>
+          <p>Ahora: <span class="precio">S/11.50</span></p>
+          <button onclick="agregar('Combo Jamón + Queso', 11.50)">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="oferta">
+        <img src="img/palkta.jpg" alt="Sándwich de palta">
+        <div class="descripcion">
+          <h3>Sandwich de Palta + Jugo Detox</h3>
+          <p><span class="precio">S/12.00</span></p>
+          <button onclick="agregar('Palta + Jugo Detox', 12.00)">Agregar al carrito</button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Healthy Sandwich</p>
+  </footer>
+
+  <script>
+    function agregar(producto, precio) {
+      let carritoTexto = localStorage.getItem('carrito');
+      let carrito = [];
+      if (carritoTexto !== null) {
+        carrito = JSON.parse(carritoTexto);
+      }
+      carrito.push({ nombre: producto, precio: precio });
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      alert(producto + ' agregado al carrito.');
+    }
+  </script>
+</body>
+</html>
+

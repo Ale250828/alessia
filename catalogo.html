@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo - Healthy Sandwich</title>
+  <link rel="stylesheet" href="css/estilosGGM.css">
+</head>
+
+<body>
+  <header>
+    <h1>Catálogo de Productos</h1>
+    <nav class="navbar">
+      <a href="#" class="logo-menu">🥪 Healthy Sandwich</a>
+      <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+      <ul id="navLinks">
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="equipo.html">Equipo</a></li>
+        <li><a href="ofertas.html">Ofertas</a></li>
+        <li><a href="carrito.html">🛒 Carrito</a></li>
+        <li><a href="login.html">Registro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="catalogo">
+    <div class="producto">
+      <figure>
+        <img src="img/pollo.jpg" alt="Sandwich de pollo">
+        <figcaption>Sandwich de Pollo</figcaption>
+      </figure>
+      <p class="precio">S/11.00</p>
+      <button onclick="agregar('Sandwich de pollo', 11.00)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <figure>
+        <img src="img/huevo.jpg" alt="Sandwich de huevo">
+        <figcaption>Sandwich de Huevo</figcaption>
+      </figure>
+      <p class="precio">S/11.00</p>
+      <button onclick="agregar('Sandwich de huevo', 11.00)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <figure>
+        <img src="img/jamón.jpg" alt="Sandwich de jamón">
+        <figcaption>Sandwich de Jamón</figcaption>
+      </figure>
+      <p class="precio">S/11.00</p>
+      <button onclick="agregar('Sandwich de jamón', 11.00)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <figure>
+        <img src="img/palkta.jpg" alt="Sandwich de palta">
+        <figcaption>Sandwich de Palta</figcaption>
+      </figure>
+      <p class="precio">S/11.00</p>
+      <button onclick="agregar('Sandwich de palta', 11.00)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <figure>
+        <img src="img/queso.jpg" alt="Sandwich de queso">
+        <figcaption>Sandwich de Queso</figcaption>
+      </figure>
+      <p class="precio">S/11.00</p>
+      <button onclick="agregar('Sandwich de queso', 11.00)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <figure>
+        <img src="img/hamburguesa.jpg" alt="Sandwich de hamburguesa">
+        <figcaption>Sandwich de Hamburguesa</figcaption>
+      </figure>
+      <p class="precio">S/11.00</p>
+      <button onclick="agregar('Sandwich de hamburguesa', 11.00)">Agregar</button>
+    </div>
+  </main>
+
+  <div class="ver-carrito">
+    <a href="carrito.html" class="boton-catalogo">Ir al carrito</a>
+  </div>
+
+  <script>
+    function agregar(producto, precio) {
+      let carritoTexto = localStorage.getItem('carrito');
+      let carrito = carritoTexto ? JSON.parse(carritoTexto) : [];
+      carrito.push({ nombre: producto, precio: precio });
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+    }
+  </script>
+</body>
+</html>

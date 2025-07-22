@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras - Healthy Sandwich</title>
+  <link rel="stylesheet" href="css/carrito.css">
+</head>
+
+<body onload="mostrarCarrito()">
+  <header>
+    <h1>🛒 Carrito de Compras</h1>
+    <nav class="navbar">
+      <a href="#" class="logo-menu">🥪 Healthy Sandwich</a>
+      <ul id="navLinks">
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catalogo</a></li>
+        <li><a href="equipo.html">Equipo</a></li>
+        <li><a href="ofertas.html">Ofertas</a></li>
+        <li><a href="login.html">Registro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="carrito-container">
+      <h2>Resumen de tu pedido</h2>
+      <div id="carrito-compras" class="carrito-box"></div>
+      <div class="acciones-carrito">
+        <button onclick="vaciarCarrito()">🧹 Vaciar carrito</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Healthy Sandwich</p>
+  </footer>
+
+  <script>
+    function mostrarCarrito() {
+      let carritoTexto = localStorage.getItem("carrito");
+      let contenedor = document.getElementById('carrito-compras');
+
+      if (!carritoTexto) {
+        contenedor.innerHTML = "<p class='mensaje'>Aún no hay productos en el carrito.</p>";
+        return;
+      }
+
+      let carrito = JSON.parse(carritoTexto);
+      let total = 0;
+      let html = "";
+
+      carrito.forEach((item, index) => {
+        html += `
+          <div class="item">
+            <p><strong>${item.nombre}</strong></p>
+            <p>Precio: S/. ${item.precio.toFixed(2)}</p>
+            <button onclick="eliminarProducto(${index})">🗑️ Eliminar</button>
+          </div>
+        `;
+        total += parseFloat(item.precio);
+      });
+
+      html += `<div class="total">Total a pagar: <strong>S/. ${total.toFixed(2)}</strong></div>`;
+      contenedor.innerHTML = html;
+    }
+
+    function eliminarProducto(indice) {
+      let carrito = JSON.parse(localStorage.getItem("carrito"));
+      carrito.splice(indice, 1);
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      mostrarCarrito();
+    }
+
+    function vaciarCarrito() {
+      localStorage.removeItem("carrito");
+      mostrarCarrito();
+    }
+  </script>
+</body>
+</html>
+

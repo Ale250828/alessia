@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #FDFCF9;
+  color: #444;
+}
+
+header {
+  background-color: #5DA271;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.navbar {
+  background-color: #A8D5BA;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.logo-menu {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: white;
+  padding: 12px 18px;
+  transition: background 0.3s ease;
+}
+
+.navbar li a:hover {
+  background-color: #5DA271;
+  border-radius: 6px;
+}
+
+.carrito-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.carrito-container h2 {
+  text-align: center;
+  color: #5DA271;
+  margin-bottom: 1.5rem;
+}
+
+.carrito-box .item {
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.carrito-box .item p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+
+.total {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #5DA271;
+}
+
+.mensaje {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #777;
+  padding: 2rem;
+}
+
+.item button,
+.acciones-carrito button {
+  background-color: #c94a4a;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.item button:hover,
+.acciones-carrito button:hover {
+  background-color: #a73232;
+}
+
+.acciones-carrito {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+footer {
+  background-color: #C9A27C;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar li {
+    width: 100%;
+    text-align: center;
+  }
+}

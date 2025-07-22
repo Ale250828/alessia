@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthy Sandwich</title>
+  <link rel="stylesheet" href="css/estilosGGM.css">
+  <link rel="stylesheet" href="css/inicio.css">
+  <script defer src="js/menu.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Healthy Sandwich</h1>
+    <nav class="navbar">
+      <a href="#" class="logo-menu">🥪 Healthy Sandwich</a>
+      <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+      <ul id="navLinks">
+        <li><a href="equipo.html">Equipo</a></li>
+        <li><a href="catalogo.html">Catalogo</a></li>
+        <li><a href="ofertas.html">Ofertas</a></li>
+        <li><a href="carrito.html">🛒 Carrito</a></li>
+        <li><a href="login.html">Registro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="slider-container">
+    <div class="slider-image fade">
+      <img src="img/hamburguesa.jpg" alt="Hamburguesa saludable">
+      <div class="slider-caption">Sándwich de hamburguesa casera</div>
+    </div>
+    <div class="slider-image fade">
+      <img src="img/pollo.jpg" alt="Pollo saludable">
+      <div class="slider-caption">Pollo a la plancha con verduras</div>
+    </div>
+    <div class="slider-image fade">
+      <img src="img/queso.jpg" alt="Queso saludable">
+      <div class="slider-caption">Sándwich de queso fresco y tomate</div>
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div style="text-align:center; padding: 1rem;">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+  </main>
+
+  <section class="descripcion">
+    <h2>Sobre Nosotros</h2>
+    <p>
+      En <strong>Healthy Sandwich</strong> creemos en la alimentación saludable sin sacrificar el sabor. 
+      Nuestro emprendimiento nació con el sueño de ofrecer opciones deliciosas, frescas y equilibradas 
+      para quienes buscan cuidar su salud sin dejar de disfrutar. Trabajamos con ingredientes naturales, 
+      pan integral, vegetales orgánicos y proteínas de alta calidad para brindarte los mejores sándwiches 
+      de la ciudad. Únete a nuestra comunidad y descubre que comer bien también puede ser sabroso.
+    </p>
+    <a href="catalogo.html" class="boton-catalogo">Ver Catálogo</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Healthy Sandwich</p>
+  </footer>
+
+  <script src="js/inicio.js"></script>
+</body>
+
+</html>
